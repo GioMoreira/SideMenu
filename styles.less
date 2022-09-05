@@ -12,14 +12,25 @@ body {
     box-sizing: border-box;
     background: var(--dark-blue);
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 section{
-    height: 1500px;
+    height: 3000px;
 }
 
 #app {
     margin-top: var(--menu-height);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+
 }
 
 .top-menu{
@@ -46,10 +57,6 @@ section{
     width: 0;
     height: 100vh;
     animation: menu-close 0.5s;
-
-    position: fixed;
-    top: var(--menu-height);
-    left: 0;
 
     ul{
         visibility: hidden;
