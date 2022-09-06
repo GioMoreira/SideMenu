@@ -56,7 +56,7 @@ section{
     background: #fff;
     width: 0;
     height: 100vh;
-    animation: menu-close 0.5s;
+    transition: width 0.5s;
 
     ul{
         visibility: hidden;
@@ -91,8 +91,9 @@ section{
     }
 
     &.active {
-        width: 250px;
-        animation: menu-open 0.6s;
+        transition: width 0.5s;
+        width: 300px;
+        
 
         ul{
             visibility: visible;
@@ -103,18 +104,30 @@ section{
 }
 
 
-@keyframes menu-open {
-    from{
-        width: 0;
-    } to {
-        width: 250px;
-    }
-}
+// @keyframes menu-open {
+//     from{
+//         width: 0;
+//     } to {
+//         width: 250px;
+//     }
+// }
 
-@keyframes menu-close{
-    from{
-        width: 250px;
-    } to{
-        width: 0;
+// @keyframes menu-close{
+//     from{
+//         width: 250px;
+//     } to{
+//         width: 0;
+//     }
+// }
+
+@media (max-width: 480px){
+    .lateral-menu {
+        position: fixed;
+        top: var(--menu-height);
+        left: 0;
+
+        &.active {
+            width: 90%;
+        }
     }
 }
